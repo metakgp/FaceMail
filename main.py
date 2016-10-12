@@ -15,7 +15,7 @@ for item in metakgp_data :
 	if (item['id'] == post_id['last_fb_post_id']) or (item['id'] == post_id['last_post_by_email_id']) :
 		break 
 	else : 
-		mail_msg += "Post No. {}\n{}\nPosted On : {} at {}\nLink to the post : https://www.facebook.com/{}\n\n".format(str(post_no),item['message'],item['real_date'],item['real_time'],item['id'] )
+		mail_msg += "Post No. {}\n{}\n\nPosted On : {} at {}\nLink to the post : https://www.facebook.com/{}\n\n".format(str(post_no),item['message'],item['real_date'],item['real_time'],item['id'] )
 		post_no += 1
 	if post_no == 2 and flag :
 		break
