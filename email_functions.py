@@ -1,12 +1,13 @@
 '''
 reading_mail() - takes no input and returns a dictonary with mail argumnets as dict['subject']  , dict['msg_body']
 send_mail() - takes 2 arguments - subject , message and returns 1 if message is sent successfully and 0 is a error occurs
-
 '''
 import gmail
 import smtplib
 import json
 from email.mime.text import MIMEText
+import Logger
+logger = Logger.Logger(name='RunLog')
 credentials = json.load(open('CONFIG', 'r'))
 def reading_mail () :  # this function returns a dictionary with email arguments
 	g = gmail.Gmail()
@@ -28,6 +29,7 @@ def send_mail(mail_subject,mail_body) :
 		server.login(credentials['email'],credentials['pass'])
 		server.sendmail(credentials['email'], credentials['to'], msg.as_string())
 		server.quit()
+		return True
 	except :
-		print "Error: unable to send email"
+		return False
 	

@@ -270,7 +270,7 @@ def main():
 	#               ('Metakgp', 'metakgp')]
 	# for_later = ['Cultural-IIT-Kharagpur']
 
-	data = get_aggregated_feed([('Metakgp', 'defconkgp')])
+	data = get_aggregated_feed([('Metakgp', 'metakgp')])
 	data = remove_duplicates(data)
 	data = prettify_date(data)
 	# for post in data:
